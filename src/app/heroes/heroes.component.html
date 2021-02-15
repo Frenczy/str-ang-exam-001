@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-8 mb-4"><input [(ngModel)]="phrase" type="text" class="form-control" placeholder="Click here to search..."></div>
+    </div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>SuperPower</th>
+                    <th>Address</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of herolist | filter:'name':phrase">
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.superPower}}</td>
+                    <td>{{i.address}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button [routerLink]="[i.id]" class="btn btn-info">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
