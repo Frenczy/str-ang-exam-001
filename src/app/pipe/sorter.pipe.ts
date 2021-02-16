@@ -10,16 +10,16 @@ export class SorterPipe implements PipeTransform {
       return list;
     };
 
-    order = order.toLocaleLowerCase();
-
     return list.sort((a, b) => {
 
-      if (order == 'price-up') {
-        return a.price - b.price;
-      } else if (order == 'price-down') {
-        return b.price - a.price;
-      } else if (order = 'a-z') {
-        return a.name.localeCompare(b.name);
+      if (order == 'id') {
+        return a.id - b.id
+      } else if (order == 'name') {
+        return a.name.localeCompare(b.name)
+      } else if (order == 'superPower') {
+        return a.superPower.localeCompare(b.superPower)
+      } else if (order == 'address') {
+        return a.address.localeCompare(b.address)
       }
 
     });

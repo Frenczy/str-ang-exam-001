@@ -16,10 +16,10 @@ export class HeroesComponent implements OnInit {
   phrase:string=""
   order: any=""
   herolist=this.hs.getAll()
-  sortbyID(event:Event){this.order="id"}
-  sortbyName(event:Event){this.order="name"}
-  sortbySuperPower(event:Event){this.order="superPower"}
-  sortbyAddress(event:Event){this.order="address"}
+  sortbyID(){this.order="id"; console.log(this.order)};
+  sortbyName(){this.order="name"; console.log(this.order)};
+  sortbySuperPower(){this.order="superPower"; console.log(this.order)};
+  sortbyAddress(){this.order="address"; console.log(this.order)};
 
   constructor(private hs:HeroService) { }
 
